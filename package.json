@@ -1,16 +1,13 @@
 {
-  "name": "ascii-art",
-  "main": "./lib/ascii-art",
-  "version": "0.0.0",
-  "private": true,
+  "name": "objc-2-rubymotion",
+  "main": "./lib/objc-2-rubymotion",
+  "version": "0.0.1",
   "description": "A short description of your package",
-  "activationEvents": ["ascii-art:convert"],
-  "repository": "https://github.com/atom/ascii-art",
+  "activationEvents": ["rubymotion:convert"],
+  "repository": "https://github.com/ahmetabdi/atom-objc-2-rubymotion",
   "license": "MIT",
   "engines": {
     "atom": ">0.39.0"
   },
-  "dependencies": {
-     "figlet": "1.0.8"
-  }
+  "dependencies": {}
 }
