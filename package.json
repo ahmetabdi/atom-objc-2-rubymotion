@@ -1,9 +1,11 @@
 {
   "name": "objc-2-rubymotion",
   "main": "./lib/objc-2-rubymotion",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A short description of your package",
-  "activationEvents": ["rubymotion:convert"],
+  "activationEvents": [
+    "rubymotion:convert"
+  ],
   "repository": "https://github.com/ahmetabdi/atom-objc-2-rubymotion",
   "license": "MIT",
   "engines": {
