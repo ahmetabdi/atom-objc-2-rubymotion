@@ -2,7 +2,7 @@
   "name": "objc-2-rubymotion",
   "main": "./lib/objc-2-rubymotion",
   "version": "0.3.0",
-  "description": "Objective C to Rubymotion code coverter",
+  "description": "Objective C to RubyMotion code coverter",
   "activationEvents": [
     "rubymotion:convert"
   ],

@@ -7,5 +7,5 @@
 
 # For more detailed documentation see
 # https://www.atom.io/docs/latest/advanced/keymaps
-'.editor':
+'atom-text-editor':
   'cmd-alt-a': 'rubymotion:convert'
