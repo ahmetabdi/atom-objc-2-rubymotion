@@ -13,6 +13,7 @@ class Converter
     @remove_autorelease()
     @remove_type_declaration()
     @change_booleans()
+    @convert_selectors()
     @restore_spaces_in_string()
 
     #allow idempotency
@@ -100,6 +101,11 @@ class Converter
   change_booleans: ->
     @s = @s.replace "YES", "true"
     @s = @s.replace "NO",  "false"
+
+    return this
+
+  convert_selectors: ->
+    @s = @s.replace /\@selector\((.*?)\)/, '"$1"'
 
     return this
 
