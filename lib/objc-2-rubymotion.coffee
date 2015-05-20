@@ -12,7 +12,10 @@ class Converter
     @remove_semicolon_at_the_end()
     @remove_autorelease()
     @remove_type_declaration()
+    @change_booleans()
+    @convert_selectors()
     @restore_spaces_in_string()
+    @space_out_equals()
 
     #allow idempotency
     result = @s
@@ -93,6 +96,22 @@ class Converter
 
   remove_type_declaration: ->
     @s = @s.replace /([^\s\S]*)[a-zA-Z_0-9]+\s*\*\s*([^=]+)=/gm, '$1$2='
+
+    return this
+
+  change_booleans: ->
+    @s = @s.replace "YES", "true"
+    @s = @s.replace "NO",  "false"
+
+    return this
+
+  convert_selectors: ->
+    @s = @s.replace /\@selector\((.*?)\)/, '"$1"'
+
+    return this
+
+  space_out_equals: ->
+    @s = @s.replace /([^\s\\])=([^\s\\])/, '$1 = $2'
 
     return this
 
