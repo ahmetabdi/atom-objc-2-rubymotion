@@ -12,6 +12,7 @@ class Converter
     @remove_semicolon_at_the_end()
     @remove_autorelease()
     @remove_type_declaration()
+    @change_booleans()
     @restore_spaces_in_string()
 
     #allow idempotency
@@ -93,6 +94,12 @@ class Converter
 
   remove_type_declaration: ->
     @s = @s.replace /([^\s\S]*)[a-zA-Z_0-9]+\s*\*\s*([^=]+)=/gm, '$1$2='
+
+    return this
+
+  change_booleans: ->
+    @s = @s.replace "YES", "true"
+    @s = @s.replace "NO",  "false"
 
     return this
 
