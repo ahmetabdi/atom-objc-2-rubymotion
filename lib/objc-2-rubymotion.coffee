@@ -15,6 +15,7 @@ class Converter
     @change_booleans()
     @convert_selectors()
     @restore_spaces_in_string()
+    @space_out_equals()
 
     #allow idempotency
     result = @s
@@ -106,6 +107,11 @@ class Converter
 
   convert_selectors: ->
     @s = @s.replace /\@selector\((.*?)\)/, '"$1"'
+
+    return this
+
+  space_out_equals: ->
+    @s = @s.replace /([^\s\\])=([^\s\\])/, '$1 = $2'
 
     return this
 
